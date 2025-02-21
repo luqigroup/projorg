@@ -107,7 +107,7 @@ def logsdir(path: str, mkdir: Optional[bool] = True) -> str:
         mkdir: An optional boolean for whether to create the directory if it
             does not exist.
     """
-    path = os.path.join(datadir("logs"), path)
+    path = os.path.join(gitdir(), "logs/", path)
     if (not os.path.exists(path)) and mkdir:
         os.makedirs(path)
     return path
