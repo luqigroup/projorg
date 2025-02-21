@@ -9,7 +9,7 @@ Run the following commands to install the package and its dependencies
 to add it to your Python environment:
 
 ```bash
-pip install git+https://github.com/alisiahkoohi/projorg
+pip install projorg
 ```
 
 To install it within a conda environment, run the following commands:
