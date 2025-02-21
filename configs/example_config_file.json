@@ -1,6 +1,6 @@
 {
     "experiment_name": "example_arguments",
     "input_size": "128,192",
-    "grf_alpha": 0.4,
+    "alpha": 4.0,
     "seed": 12
 }

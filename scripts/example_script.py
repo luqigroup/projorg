@@ -42,7 +42,11 @@ def do_compute(args: argparse.ArgumentParser) -> None:
     """
 
     # Generate a random field.
-    field = gaussian_random_fields(num_fields=1, input_size=args.input_size)
+    field = gaussian_random_fields(
+        num_fields=1,
+        input_size=args.input_size,
+        alpha=args.alpha,
+    )
 
     # Save the field to a file.
     np.save(

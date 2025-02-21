@@ -43,7 +43,7 @@ as shown below. If you have multiple values, provide as string with comma separa
 python scripts/example_script.py \
     --experiment_name "some_experiment" \
     --input_size "256,512" \
-    --grf_alpha 0.3 \
+    --alpha 3.0 \
     --seed 1
 ```
 
