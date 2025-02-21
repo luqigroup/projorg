@@ -50,7 +50,7 @@ def do_compute(args: argparse.ArgumentParser) -> None:
         field,
     )
 
-    fig = plt.figure(figsize=(4, 4))
+    fig = plt.figure()
     plt.imshow(
         field[0],
         aspect=1,
@@ -90,6 +90,9 @@ if "__main__" == __name__:
     args = query_arguments(CONFIG_FILE)[0]
     args.experiment = make_experiment_name(args)
     args = process_sequence_arguments(args, [("input_size", int)])
+
+    # Set random seed.
+    np.random.seed(args.seed)
 
     # Run the computation.
     do_compute(args)

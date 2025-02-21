@@ -13,7 +13,7 @@ from typing import Optional
 import git
 
 
-def find_project_root(marker="setup.py") -> str:
+def find_project_root(marker="README.md") -> str:
     """Find the absolute path to the project's root directory.
 
     Args:

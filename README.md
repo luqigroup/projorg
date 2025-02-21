@@ -25,6 +25,28 @@ cd projorg/
 pip install -e .
 ```
 
+## Example
+
+A usage example of the subset of utilities provided by the package is
+included in the `scripts` directory. Run the following command to see the
+usage example:
+
+```bash
+python scripts/example_script.py
+```
+
+This example uses the default command line arguments stored in the
+`configs/example_config_file.json` file. You can provide your own values
+as shown below. If you have multiple values, provide as string with comma separation.
+
+```bash
+python scripts/example_script.py \
+    --experiment_name "some_experiment" \
+    --input_size "256,512" \
+    --grf_alpha 0.3 \
+    --seed 1
+```
+
 ## Questions
 
 Please contact alisk@rice.edu for questions.
