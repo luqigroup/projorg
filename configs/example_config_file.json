@@ -2,5 +2,6 @@
     "experiment_name": "example_arguments",
     "input_size": "128,192",
     "alpha": 4.0,
-    "seed": 12
+    "seed": 12,
+    "ignore_this_in_path_name": "some_value"
 }

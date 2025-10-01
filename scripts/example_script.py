@@ -13,6 +13,7 @@ from projorg import (
     plotsdir,
     process_sequence_arguments,
     query_arguments,
+    setup_environment,
 )
 
 CONFIG_FILE = "example_config_file.json"
@@ -91,9 +92,13 @@ def do_compute(args: argparse.ArgumentParser) -> None:
 
 if "__main__" == __name__:
     # Read input arguments from a json file and make an experiment name.
-    args = query_arguments(CONFIG_FILE)[0]
-    args.experiment = make_experiment_name(args)
-    args = process_sequence_arguments(args, [("input_size", int)])
+    args = setup_environment(
+        CONFIG_FILE,
+        ignore_arg_list=["ignore_this_in_path_name"],
+        sequence_args_and_types=[
+            ("input_size", int),
+        ],
+    )
 
     # Set random seed.
     np.random.seed(args.seed)
