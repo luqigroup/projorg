@@ -9,10 +9,7 @@ import numpy as np
 from projorg import (
     datadir,
     logsdir,
-    make_experiment_name,
     plotsdir,
-    process_sequence_arguments,
-    query_arguments,
     setup_environment,
 )
 
