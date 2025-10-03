@@ -8,7 +8,6 @@ import numpy as np
 
 from projorg import (
     datadir,
-    logsdir,
     plotsdir,
     setup_environment,
 )
@@ -71,30 +70,21 @@ def do_compute(args: argparse.ArgumentParser) -> None:
     )
     plt.close(fig)
 
-    # Write the experiment arguments and path to data and plots to a log
-    # text file.
-    with open(
-        os.path.join(logsdir(args.experiment), "experiment_log.txt"),
-        "w",
-    ) as f:
-        f.write(f"Experiment arguments: {args}\n")
-        f.write(f"Data path: {datadir(args.experiment, mkdir=False)}\n")
-        f.write(f"Plots path: {plotsdir(args.experiment, mkdir=False)}\n")
-
-    # Print path to path to logs, data and plots.
-    print(f"Logs path: {logsdir(args.experiment, mkdir=False)}")
-    print(f"Data path: {datadir(args.experiment, mkdir=False)}")
-    print(f"Plots path: {plotsdir(args.experiment, mkdir=False)}")
-
 
 if "__main__" == __name__:
-    # Read input arguments from a json file and make an experiment name.
+    # The setup_environment automatically logs git hashes, timestamps,
+    # config files, and diffs to the logs directory.
     args = setup_environment(
         CONFIG_FILE,
         ignore_arg_list=["ignore_this_in_path_name"],
         sequence_args_and_types=[
             ("input_size", int),
         ],
+        # Optional: add any additional info to log
+        additional_info={
+            "description": "Example Gaussian random field generation",
+            "purpose": "Demonstrate projorg logging capabilities",
+        },
     )
 
     # Set random seed.
